@@ -1,7 +1,7 @@
 <ul class='nav nav-tabs nav-justified mb-3'>
     {{-- ユーザ詳細タブ --}}
     <li class='nav-item'>
-        <a href='{{ route('users.show', ['user' => $user->id]) }}' class='nav-link {{ Request::reouteIs('users.show') ? 'active' : '' }}'>
+        <a href='{{ route('users.show', ['user' => $user->id]) }}' class='nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}'>
             TimeLine
             <span class='badge badge-secondary'>{{ $user->microposts_count }}</span>
         </a>

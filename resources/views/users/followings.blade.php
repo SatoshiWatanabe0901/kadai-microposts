@@ -10,7 +10,7 @@
             {{-- タブ --}}
             @include('users.navtabs')
             {{-- ユーザ一覧 --}}
-            @include('usrs.users')
+            @include('users.users')
         </div>
     </div>
 @endsection
