@@ -204,17 +204,4 @@ class User extends Authenticatable
         //  favorite中のMicropostの中に$userIdのものが存在するか
         return $this->favorites()->where('micropost_id', $micropostId)->exists();
      }
-     
-       public function feed_favoriteMicroposts()
-    {
-        // favoriteテーブに記録されているuser_idを取得
-        $userIds = $this->favorites()->pluck('favorite.user_id')->toArray();
-        // Micropostテーブルのデータのうち、$userIDs配列のいずれかと合致するuser_idをもつものを返す。
-        return Micropost::whereIn('user_id', $userIds);
-        // favoriteテーブに記録されているmicropost_idを取得
-        $postIds = $this->favorites()->pluck('favorite.micropost_id')->toArray();
-        // Micropostテーブルのデータのうち、$postIds配列のいずれかと合致するidをもつものを返す。
-        return Micropost::whereIn('id', $postIds);
-    }
-     
 }

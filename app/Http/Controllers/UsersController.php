@@ -100,9 +100,6 @@ class UsersController extends Controller
     public function favorites($id)
     {
         // idの値でユーザを検索して取得
-        $micropost = Micropost::findOrFail($id);
-        
-        // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
         
         // 関係するモデルの件数をロード
